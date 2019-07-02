@@ -1,9 +1,10 @@
-package ir.hamplus.aac_with_bottonnavigation
+package ir.hamplus.aac_with_bottonnavigation.view.activity
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import ir.hamplus.aac_with_bottonnavigation.R
+import kotlinx.android.synthetic.main.ly_activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                message.text = getString(R.string.title_notifications )
+                message.text = getString(R.string.title_notifications)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -27,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.ly_activity_main)
+
         nav_view.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 }
