@@ -1,14 +1,20 @@
 package ir.hamplus.aac_with_bottonnavigation.view.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
 import ir.hamplus.aac_with_bottonnavigation.R
+import ir.hamplus.aac_with_bottonnavigation.view.activity.ActivityLoginPagesNavHost
+import ir.hamplus.aac_with_bottonnavigation.view.activity.MainActivity
+import kotlinx.android.synthetic.main.ly_fragment_login_get_mobile.*
+import kotlinx.android.synthetic.main.ly_fragment_login_verify_code.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,19 +52,45 @@ class FragmentLoginVerifyCode : Fragment() {
         return inflater.inflate(R.layout.ly_fragment_login_verify_code, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btn_next_navigation_activity.setOnClickListener {
+         //   ActivityLoginPagesNavHost().finishAffinity()
+         /*   val i = Intent(context, MainActivity::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(i)*/
+
+
+            findNavController().navigate(R.id.action_fragmentLoginVerifyCode_to_mainActivity)
+            ActivityLoginPagesNavHost().finish()
+
+           // Navigation.findNavController(btn_next_frg_get_mobile).navigate(R.id.mainActivity)
+
+          //  ActivityLoginPagesNavHost().onBackPressed()
+
+
+        }
+    }
+
+
     // TODO: Rename method, update argument and hook method into UI event
     fun onButtonPressed(uri: Uri) {
         listener?.onFragmentInteraction(uri)
     }
+
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
+
+
 
     override fun onDetach() {
         super.onDetach()

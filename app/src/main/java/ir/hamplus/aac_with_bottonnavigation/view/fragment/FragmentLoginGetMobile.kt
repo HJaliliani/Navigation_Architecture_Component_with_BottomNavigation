@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
 import ir.hamplus.aac_with_bottonnavigation.R
+import kotlinx.android.synthetic.main.ly_fragment_login_get_mobile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,6 +40,16 @@ class FragmentLoginGetMobile : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btn_next_frg_verify_code.setOnClickListener {
+
+            findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode)
+
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -56,7 +68,7 @@ class FragmentLoginGetMobile : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 
