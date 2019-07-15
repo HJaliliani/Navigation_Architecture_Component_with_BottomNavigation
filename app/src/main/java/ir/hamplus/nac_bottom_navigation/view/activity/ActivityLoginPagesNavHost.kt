@@ -1,8 +1,8 @@
-package ir.hamplus.aac_with_bottonnavigation.view.activity
+package ir.hamplus.nac_bottom_navigation.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity;
-import ir.hamplus.aac_with_bottonnavigation.R
+import ir.hamplus.nac_bottom_navigation.R
 
 class ActivityLoginPagesNavHost : AppCompatActivity() {
 

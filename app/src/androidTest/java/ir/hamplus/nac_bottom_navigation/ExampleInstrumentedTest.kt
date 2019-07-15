@@ -1,4 +1,4 @@
-package ir.hamplus.aac_with_bottonnavigation
+package ir.hamplus.nac_bottom_navigation
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

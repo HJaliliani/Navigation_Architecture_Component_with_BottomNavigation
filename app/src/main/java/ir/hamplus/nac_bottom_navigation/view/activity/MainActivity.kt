@@ -1,4 +1,4 @@
-package ir.hamplus.aac_with_bottonnavigation.view.activity
+package ir.hamplus.nac_bottom_navigation.view.activity
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,10 +6,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.ly_activity_main.*
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import ir.hamplus.aac_with_bottonnavigation.R
+import ir.hamplus.nac_bottom_navigation.R
 
 
 class MainActivity : AppCompatActivity() {

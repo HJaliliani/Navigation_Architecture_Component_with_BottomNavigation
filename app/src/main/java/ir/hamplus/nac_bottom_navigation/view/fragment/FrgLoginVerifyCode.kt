@@ -1,4 +1,4 @@
-package ir.hamplus.aac_with_bottonnavigation.view.fragment
+package ir.hamplus.nac_bottom_navigation.view.fragment
 
 import android.content.Context
 import android.net.Uri
@@ -9,8 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
-import ir.hamplus.aac_with_bottonnavigation.R
-import ir.hamplus.aac_with_bottonnavigation.view.activity.ActivityLoginPagesNavHost
+import ir.hamplus.nac_bottom_navigation.R
+import ir.hamplus.nac_bottom_navigation.view.activity.ActivityLoginPagesNavHost
 import kotlinx.android.synthetic.main.ly_frg_login_verify_code.*
 
 // TODO: Rename parameter arguments, choose names that match
