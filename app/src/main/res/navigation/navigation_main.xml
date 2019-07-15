@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation_main"
+            app:startDestination="@id/frgHome">
+
+    <fragment android:id="@+id/frgHome" android:name="ir.hamplus.aac_with_bottonnavigation.view.fragment.FrgHome"
+              android:label="ly_frg_home" tools:layout="@layout/ly_frg_home">
+        <action android:id="@+id/action_frgHome_to_frgDashboard" app:destination="@id/frgDashboard"/>
+    </fragment>
+    <fragment android:id="@+id/frgDashboard"
+              android:name="ir.hamplus.aac_with_bottonnavigation.view.fragment.FrgDashboard"
+              android:label="ly_frg_dashboard" tools:layout="@layout/ly_frg_dashboard">
+        <action android:id="@+id/action_frgDashboard_to_frgNotifications" app:destination="@id/frgNotifications"/>
+    </fragment>
+    <fragment android:id="@+id/frgNotifications"
+              android:name="ir.hamplus.aac_with_bottonnavigation.view.fragment.FrgNotifications"
+              android:label="ly_frg_notifications" tools:layout="@layout/ly_frg_notifications">
+        <action android:id="@+id/action_frgNotifications_to_frgHome" app:destination="@id/frgHome"/>
+    </fragment>
+</navigation>

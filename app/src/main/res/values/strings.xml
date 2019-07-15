@@ -18,4 +18,13 @@
         <item>French</item>
     </string-array>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="txt1_frg_home">Fragment Home</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="txt1_frg_dashboard">Fragment Dashboard</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="txt1_frg_notofication">Hello blank fragment</string>
+
 </resources>

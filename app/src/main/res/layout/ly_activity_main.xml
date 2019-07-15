@@ -9,7 +9,7 @@
         tools:context=".view.activity.MainActivity">
 
 
-    <androidx.appcompat.widget.AppCompatTextView
+<!--    <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,7 +18,17 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:text="@string/title_home"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <!--  app:defaultNavHost="true" : Nav will handle Back key -->
+    <fragment
+            android:id="@+id/nav_host_frag_main"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="false"
+            app:navGraph="@navigation/navigation_main"  />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"

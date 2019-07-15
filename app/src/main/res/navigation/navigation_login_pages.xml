@@ -6,13 +6,13 @@
 
     <fragment android:id="@+id/fragmentLoginGetMobile"
               android:name="ir.hamplus.aac_with_bottonnavigation.view.fragment.FragmentLoginGetMobile"
-              android:label="ly_fragment_login_get_mobile" tools:layout="@layout/ly_fragment_login_get_mobile">
+              android:label="ly_fragment_login_get_mobile" tools:layout="@layout/ly_frg_login_get_mobile">
         <action android:id="@+id/action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode"
                 app:destination="@id/fragmentLoginVerifyCode" app:enterAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
     <fragment android:id="@+id/fragmentLoginVerifyCode"
               android:name="ir.hamplus.aac_with_bottonnavigation.view.fragment.FragmentLoginVerifyCode"
-              android:label="ly_fragment_login_verify_code" tools:layout="@layout/ly_fragment_login_verify_code">
+              android:label="ly_fragment_login_verify_code" tools:layout="@layout/ly_frg_login_verify_code">
         <action android:id="@+id/action_fragmentLoginVerifyCode_to_mainActivity" app:destination="@id/mainActivity"
                 app:enterAnim="@anim/nav_default_enter_anim"
                 app:popUpTo="@+id/mainActivity" app:popUpToInclusive="true" app:launchSingleTop="true"
@@ -20,7 +20,7 @@
     </fragment>
     <fragment android:id="@+id/fragmentSelectLanguage"
               android:name="ir.hamplus.aac_with_bottonnavigation.view.fragment.FragmentSelectLanguage"
-              android:label="ly_fragment_select_language" tools:layout="@layout/ly_fragment_select_language">
+              android:label="ly_fragment_select_language" tools:layout="@layout/ly_frg_select_language">
         <action android:id="@+id/action_fragmentSelectLanguage_to_fragmentLoginGetMobile"
                 app:destination="@id/fragmentLoginGetMobile" app:enterAnim="@anim/nav_default_pop_enter_anim"
                 app:exitAnim="@anim/nav_default_enter_anim"/>

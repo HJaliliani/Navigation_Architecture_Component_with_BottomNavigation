@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import ir.hamplus.aac_with_bottonnavigation.R
-import kotlinx.android.synthetic.main.ly_fragment_select_language.*
+import kotlinx.android.synthetic.main.ly_frg_select_language.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,7 +41,7 @@ class FragmentSelectLanguage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ly_fragment_select_language, container, false)
+        return inflater.inflate(R.layout.ly_frg_select_language, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
