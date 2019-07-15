@@ -3,7 +3,8 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
-             tools:context=".view.fragment.FragmentLoginVerifyCode">
+             tools:context=".view.fragment.FragmentLoginVerifyCode"
+             android:background="@color/colorAccent">
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
                                                        android:layout_height="match_parent">
@@ -20,6 +21,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
+                android:background="#FFFF"
                 android:id="@+id/editTextVerifyCode"
                 app:layout_constraintEnd_toEndOf="@+id/txtVFrg3" app:layout_constraintStart_toStartOf="@+id/txtVFrg3"
                 android:layout_marginStart="8dp"
