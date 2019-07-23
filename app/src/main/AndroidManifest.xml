@@ -12,7 +12,6 @@
         <activity
                 android:name="ir.hamplus.nac_bottom_navigation.view.activity.ActivityLoginPagesNavHost"
                 android:label="@string/title_activity_login_pages_nav_host"
-                android:launchMode="standard"
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,7 +23,6 @@
 
         <activity
                 android:name="ir.hamplus.nac_bottom_navigation.view.activity.MainActivity"
-                android:launchMode="standard"
                 android:label="@string/app_name">
             <nav-graph android:value="@navigation/navigation_main"/>
         </activity>

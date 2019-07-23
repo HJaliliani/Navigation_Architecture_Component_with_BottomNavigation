@@ -46,8 +46,10 @@ class MainActivity : AppCompatActivity() {
         //Add listener to Bottom Navigation Button
         //bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-
-
-
     }
+
+  /*  override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }*/
 }
