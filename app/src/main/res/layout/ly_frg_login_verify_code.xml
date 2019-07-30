@@ -21,7 +21,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
-                android:background="#FFFF"
+
+                android:background="@drawable/shadow_edittext"
                 android:id="@+id/editTextVerifyCode"
                 app:layout_constraintEnd_toEndOf="@+id/txtVFrg3" app:layout_constraintStart_toStartOf="@+id/txtVFrg3"
                 android:layout_marginStart="8dp"
