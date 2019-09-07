@@ -206,7 +206,18 @@ class FrgDashboard : Fragment() {
 
                 var speechedWord = data?.extras?.get("speech")
                 speechedWord?.let {
-                        if ( ActSpech.arrForBalance.contains(speechedWord.toString().toLowerCase()) ){
+                    if(ActSpech.arrForBalance.any { speechedWord.toString().contains(it) }){
+                        val intent = Intent(context, ActBalance::class.java)
+                        intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                        startActivity(intent)
+                    }
+                    else if (ActSpech.arrForTransfer.any { speechedWord.toString().contains(it) }){
+                        val intent = Intent(context, ActTransfer::class.java)
+                        intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                        startActivity(intent)
+
+                    }
+                       /* if ( ActSpech.arrForBalance.contains(speechedWord.toString().toLowerCase()) ){
                             val intent = Intent(context, ActBalance::class.java)
                             intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                             startActivity(intent)
@@ -214,7 +225,7 @@ class FrgDashboard : Fragment() {
                              val intent = Intent(context, ActTransfer::class.java)
                             intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                             startActivity(intent)
-                        }
+                        }*/
 
                 }
             }

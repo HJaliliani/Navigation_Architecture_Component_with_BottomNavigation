@@ -127,11 +127,12 @@ class ActSpech : AppCompatActivity() {
             if (resultCode == RESULT_OK && data != null) {
                 val result = data
                     .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                var speech = result[0].toString()
+                var speech = result[0].toString().toLowerCase()
                 //   tv_result?.text=result[0].toString()
                 // finish()
                 //   if (speech.contains("balance")  or speech.contains("transfer") or speech.contains("ziad")  or speech.contains("vener") or speech.contains("bener") ){
-                if (arrForBalance.contains(speech) or arrForTransfer.contains(speech)) {
+              //  if (arrForBalance.contains(speech) or arrForTransfer.contains(speech)) {
+              if ( arrForBalance.any { speech.contains(it) } or arrForTransfer.any { speech.contains(it) }  ){
                     var returnIntent = Intent(this, ActSpech::class.java)
                     returnIntent.putExtra("speech", speech)
                     setResult(AppCompatActivity.RESULT_OK, returnIntent)
