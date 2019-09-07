@@ -26,7 +26,9 @@
 
     android:theme="@style/AppTheme">
         <activity
-                android:name="ir.hamplus.all_pay.view.activity.ActivityLoginPagesNavHost"
+            android:screenOrientation="portrait"
+
+            android:name="ir.hamplus.all_pay.view.activity.ActivityLoginPagesNavHost"
                 android:label="@string/title_activity_login_pages_nav_host"
                 android:theme="@style/AppTheme.NoActionBar">
 
@@ -34,12 +36,17 @@
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
+
             android:theme="@style/AppTheme.NoActionBar"
                 android:name="ir.hamplus.all_pay.view.activity.MainActivity"
                 android:label="@string/app_name">
             <nav-graph android:value="@navigation/navigation_main"/>
         </activity>
-        <activity android:name=".view.activity.ActSplash"
+        <activity
+            android:screenOrientation="portrait"
+
+            android:name=".view.activity.ActSplash"
             android:theme="@style/AppTheme.NoActionBar"
             >
             <intent-filter>
@@ -50,25 +57,35 @@
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
+
             android:name="ir.hamplus.all_pay.view.activity.ActPWAWebView"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+            android:screenOrientation="portrait"
+
             android:name="ir.hamplus.all_pay.view.activity.ActTransfer"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
+
             android:name="ir.hamplus.all_pay.view.activity.ActBalance"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
+
             android:name="ir.hamplus.all_pay.view.activity.ActSpech"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
+            android:screenOrientation="portrait"
+
             android:name="ir.hamplus.all_pay.view.activity.ActRecharge"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

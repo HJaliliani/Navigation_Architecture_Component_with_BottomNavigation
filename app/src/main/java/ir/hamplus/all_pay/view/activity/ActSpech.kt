@@ -18,7 +18,7 @@ class ActSpech : AppCompatActivity() {
 
     companion object{
          val arrForBalance = arrayOf<String>("balance","ba","بالانس" ,"اعتبار" , "receipt" , "رصید", "رصید", "rece",   "reci")
-        val arrForTransfer = arrayOf<String>("transfer","ziad","vener","bener","trans","vener","bener","venera","bi" , "be", "mir", "ben", "venira" , "vanilla", "vanila")
+        val arrForTransfer = arrayOf<String>("transfer","ziad","vener","bener","trans","vener","bener","venera","bi" , "be", "mir", "ben", "venira" , "vanilla", "vanila", "benera", "benira")
 
     }
     private val REQ_CODE = 100
