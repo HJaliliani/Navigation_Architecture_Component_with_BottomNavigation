@@ -66,6 +66,7 @@ class ActSpech : AppCompatActivity() {
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH)
             //intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "en-GB")//English (United Kingdom)
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak")
+            intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 3000)
 
             try {
                 startActivityForResult(intent, REQ_CODE)
@@ -87,6 +88,7 @@ class ActSpech : AppCompatActivity() {
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH)
             //intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "fr-FR")//French (France)
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak")
+            intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 3000)
 
             try {
                 startActivityForResult(intent, REQ_CODE)
@@ -108,6 +110,8 @@ class ActSpech : AppCompatActivity() {
             //intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.KOREAN)
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ar-IQ")//Korean (South Korea)
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak")
+            intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 3000)
+
 
             try {
                 startActivityForResult(intent, REQ_CODE)
