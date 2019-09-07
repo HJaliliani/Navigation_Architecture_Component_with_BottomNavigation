@@ -179,11 +179,13 @@ class FrgDashboard : Fragment() {
                     11 ->{
                         Log.i("ALL-Pay", i.toString())
                        // CallWebViewAct("")
+                        Toast.makeText(context,"Comming Soon",Toast.LENGTH_LONG).show()
 
                     }
                     12->{
                         Log.i("ALL-Pay", i.toString())
                       //  CallWebViewAct("")
+                        Toast.makeText(context,"Comming Soon",Toast.LENGTH_LONG).show()
 
                     }
 
@@ -202,16 +204,16 @@ class FrgDashboard : Fragment() {
                     .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
                 tv_result?.text=result[0].toString()
 
-                    data?.extras?.get("speech")?.let {
-                        if (data?.extras?.get("speech").toString().contains("balance") or  data?.extras?.get("speech").toString().contains("ba") or data?.extras?.get("speech").toString().contains("بالانس") or data?.extras?.get("speech").toString().contains("اعتبار") or data?.extras?.get("speech").toString().contains("رصید") or data?.extras?.get("speech").toString().contains("receipt")   ){
+                var speechedWord = data?.extras?.get("speech")
+                speechedWord?.let {
+                        if ( ActSpech.arrForBalance.contains(speechedWord.toString().toLowerCase()) ){
                             val intent = Intent(context, ActBalance::class.java)
                             intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                             startActivity(intent)
-                    } else if (data?.extras?.get("speech").toString().contains("transfer")){
+                    } else if (ActSpech.arrForTransfer.contains(speechedWord?.toString().toLowerCase() )){
                              val intent = Intent(context, ActTransfer::class.java)
                             intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                             startActivity(intent)
-
                         }
 
                 }

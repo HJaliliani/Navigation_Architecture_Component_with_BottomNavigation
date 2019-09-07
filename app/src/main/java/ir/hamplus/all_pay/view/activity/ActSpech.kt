@@ -16,6 +16,11 @@ import java.util.*
 
 class ActSpech : AppCompatActivity() {
 
+    companion object{
+         val arrForBalance = arrayOf<String>("balance","ba","بالانس" ,"اعتبار" , "receipt" , "رصید", "رصید", "rece",   "reci")
+        val arrForTransfer = arrayOf<String>("transfer","ziad","vener","bener","trans","vener","bener","venera","bi" , "be", "mir", "ben", "venira" )
+
+    }
     private val REQ_CODE = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +81,7 @@ class ActSpech : AppCompatActivity() {
                 RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
             )
-            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.FRANCE)
+            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH)
             //intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "fr-FR")//French (France)
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak")
 
@@ -118,23 +123,24 @@ class ActSpech : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode==REQ_CODE){
-            if (resultCode == RESULT_OK && data!=null) {
+        if (requestCode == REQ_CODE) {
+            if (resultCode == RESULT_OK && data != null) {
                 val result = data
                     .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                tv_result?.text=result[0].toString()
+                var speech = result[0].toString()
+                //   tv_result?.text=result[0].toString()
                 // finish()
-               if (tv_result.text.toString().contains("balance")  or tv_result.text.toString().contains("transfer")){
-
-                   var returnIntent = Intent(this, ActSpech::class.java)
-                   returnIntent.putExtra("speech",   tv_result.text.toString())
-                   setResult(AppCompatActivity.RESULT_OK, returnIntent)
-                   finish()
+                //   if (speech.contains("balance")  or speech.contains("transfer") or speech.contains("ziad")  or speech.contains("vener") or speech.contains("bener") ){
+                if (arrForBalance.contains(speech) or arrForTransfer.contains(speech)) {
+                    var returnIntent = Intent(this, ActSpech::class.java)
+                    returnIntent.putExtra("speech", speech)
+                    setResult(AppCompatActivity.RESULT_OK, returnIntent)
+                    finish()
+                    //    }
                 }
             }
         }
     }
-
     private fun setupPermissions() {
         val permission = ContextCompat.checkSelfPermission(this,
             Manifest.permission.RECORD_AUDIO)

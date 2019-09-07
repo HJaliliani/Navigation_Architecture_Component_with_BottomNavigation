@@ -55,7 +55,7 @@
                 android:layout_weight="1"
                 android:padding="10dp"
                 android:background="?selectableItemBackgroundBorderless"
-                app:srcCompat="@drawable/ic_france"/>
+                app:srcCompat="@drawable/kurdistan_flag"/>
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imv_south_korea"
