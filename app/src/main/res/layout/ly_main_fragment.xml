@@ -28,7 +28,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:scaleType="centerInside"
-                android:src="@drawable/all_pay_logo"
+                android:src="@drawable/logo_allpay_1"
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
@@ -115,7 +115,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/family_time" />
+                            app:srcCompat="@drawable/ic_transfer" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -156,15 +156,15 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            android:src="@drawable/ic_pay_bill" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Pay Bills"
+                            android:text="Shopping"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
-                            android:textSize="16sp"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -194,7 +194,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/team_time" />
+                            app:srcCompat="@drawable/ic_money_transfer" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -273,7 +273,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            app:srcCompat="@drawable/ic_hotel_solid" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -310,12 +310,12 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            app:srcCompat="@drawable/ic_question_circle_regular" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Emergencies"
+                            android:text="City info"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="16sp"
@@ -347,7 +347,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            app:srcCompat="@drawable/ic_map_marked_solid" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -384,12 +384,12 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            app:srcCompat="@drawable/ic_plane_departure_solid" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Calendars"
+                            android:text="Flight"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
@@ -421,12 +421,12 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/calendar" />
+                            app:srcCompat="@drawable/ic_resturants" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Calendars"
+                            android:text="Resturants"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
