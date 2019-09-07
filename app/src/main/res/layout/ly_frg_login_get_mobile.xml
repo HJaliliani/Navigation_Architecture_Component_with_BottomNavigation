@@ -12,7 +12,7 @@
         <!-- TODO: Update blank fragment layout -->
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/edTMobile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
@@ -27,9 +27,9 @@
                 android:text="@string/next_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_next_frg_verify_code" app:layout_constraintEnd_toEndOf="@+id/editText"
-                app:layout_constraintStart_toStartOf="@+id/editText"
-                app:layout_constraintTop_toBottomOf="@+id/editText"/>
+                android:id="@+id/btn_next_frg_verify_code" app:layout_constraintEnd_toEndOf="@+id/edTMobile"
+                app:layout_constraintStart_toStartOf="@+id/edTMobile"
+                app:layout_constraintTop_toBottomOf="@+id/edTMobile"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -38,9 +38,9 @@
             android:layout_marginTop="320dp"
             android:text="Enter Mobile Number"
             android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="@+id/editText"
+            app:layout_constraintEnd_toEndOf="@+id/edTMobile"
             app:layout_constraintHorizontal_bias="0.379"
-            app:layout_constraintStart_toStartOf="@+id/editText"
+            app:layout_constraintStart_toStartOf="@+id/edTMobile"
             app:layout_constraintTop_toTopOf="parent" />
 
 

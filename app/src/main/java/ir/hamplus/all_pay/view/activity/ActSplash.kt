@@ -32,7 +32,7 @@ class ActSplash : AppCompatActivity() {
                 try {
                     // Thread will sleep for 5 seconds
                    Thread.sleep((1 * 2000).toLong())
-                    if (DeviceUtil.getPrefStrValues(this@ActSplash,"Phone").isNullOrEmpty()) {
+                    if (DeviceUtil.getPrefStrValues(this@ActSplash,"Mobile").isNullOrEmpty()) {
                         // call  mobile number Page
                         val i = Intent(baseContext, ActivityLoginPagesNavHost::class.java)
                         startActivity(i)

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import ir.hamplus.all_pay.R
+import ir.hamplus.all_pay.utils.DeviceUtil
 import kotlinx.android.synthetic.main.ly_frg_login_get_mobile.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,8 +46,21 @@ class FragmentLoginGetMobile : Fragment() {
 
         btn_next_frg_verify_code.setOnClickListener {
 
-            findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode)
+            if ( ! edTMobile.text.toString().isNullOrBlank() ){
+                if (edTMobile.text.toString().length>0)
+                    DeviceUtil.savePrefStrValues(this.context,"Mobile",edTMobile.text.toString())
+               //Goto Verify
+               // findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode)
+               // Main Activity
+                findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_mainActivity)
 
+                // findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode)
+
+            }
+            else {
+               // findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode)
+                findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_mainActivity)
+            }
         }
     }
 

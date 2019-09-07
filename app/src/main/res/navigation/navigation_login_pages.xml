@@ -9,6 +9,9 @@
               android:label="ly_fragment_login_get_mobile" tools:layout="@layout/ly_frg_login_get_mobile">
         <action android:id="@+id/action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode"
                 app:destination="@id/fragmentLoginVerifyCode" app:enterAnim="@anim/nav_default_pop_enter_anim"/>
+        <action
+            android:id="@+id/action_fragmentLoginGetMobile_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
     <fragment android:id="@+id/fragmentLoginVerifyCode"
               android:name="ir.hamplus.all_pay.view.fragment.FragmentLoginVerifyCode"

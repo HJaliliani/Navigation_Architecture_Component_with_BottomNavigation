@@ -10,6 +10,5 @@ class ActivityLoginPagesNavHost : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ly_activity_login_pages)
 
-
     }
 }
