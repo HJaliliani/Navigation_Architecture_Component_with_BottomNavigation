@@ -113,7 +113,7 @@ class FrgDashboard : Fragment() {
                     1->{
                         Log.i("ALL-Pay", i.toString())
                          val intent = Intent(context, ActBalance::class.java)
-                         // intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                         intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                           startActivity(intent)
 
 //                        val int = Intent(context, ActPWAWebView::class.java)
