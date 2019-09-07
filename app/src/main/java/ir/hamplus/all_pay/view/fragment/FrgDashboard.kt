@@ -21,10 +21,7 @@ import androidx.navigation.ui.setupWithNavController
 
 import ir.hamplus.all_pay.R
 import ir.hamplus.all_pay.utils.DeviceUtil
-import ir.hamplus.all_pay.view.activity.ActBalance
-import ir.hamplus.all_pay.view.activity.ActPWAWebView
-import ir.hamplus.all_pay.view.activity.ActSpech
-import ir.hamplus.all_pay.view.activity.ActTransfer
+import ir.hamplus.all_pay.view.activity.*
 import kotlinx.android.synthetic.main.ly_activity_main.*
 import kotlinx.android.synthetic.main.ly_speech.*
 
@@ -139,7 +136,10 @@ class FrgDashboard : Fragment() {
 
                         Log.i("ALL-Pay", i.toString())
                         //CallWebViewAct("")
-                        Toast.makeText(context,"Comming Soon",Toast.LENGTH_LONG).show()
+                       // Toast.makeText(context,"Comming Soon",Toast.LENGTH_LONG).show()
+                        val intent = Intent(context, ActRecharge::class.java)
+                        intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                        startActivity(intent)
 
                     }
                     5 ->{

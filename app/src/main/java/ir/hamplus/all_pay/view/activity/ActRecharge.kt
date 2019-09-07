@@ -16,6 +16,8 @@ import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_act_transfer.*
 import android.widget.Toast
 import ir.hamplus.all_pay.R
+import kotlinx.android.synthetic.main.activity_act_transfer.ImgDestSim
+import kotlinx.android.synthetic.main.ly_act_recharge.*
 
 
 class ActRecharge : AppCompatActivity() {
@@ -25,7 +27,6 @@ class ActRecharge : AppCompatActivity() {
         const val PERMISSIONS_REQUEST_Zain_USSD_CODE = 300
     }
     var sourceNumber = ""
-    var desNumber = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,18 +34,18 @@ class ActRecharge : AppCompatActivity() {
 
 
         if (intent.hasExtra("Mobile"))
-            edSourceNumTransferBalance.setText(  intent.extras["Mobile"]?.toString() )
+            edRechargeMobileNumber.setText(  intent.extras["Mobile"]?.toString() )
 
-       setOperatorImage(edSourceNumTransferBalance.text.toString(), "source")
+       setOperatorImage(edRechargeMobileNumber.text.toString())
 
-        edBalancePhoneNumber.addTextChangedListener(object :
+        edRechargeMobileNumber.addTextChangedListener(object :
             TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                setOperatorImage(s.toString(), "destination")
+                setOperatorImage(s.toString())
             } // onTextChanged
 
             override fun afterTextChanged(s: Editable?) {
@@ -58,7 +59,7 @@ class ActRecharge : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                setOperatorImage(s.toString(), "source")
+                setOperatorImage(s.toString())
             } // onTextChanged
 
             override fun afterTextChanged(s: Editable?) {
@@ -84,73 +85,37 @@ class ActRecharge : AppCompatActivity() {
         }
     }
 
-    fun setOperatorImage(mobileNumber: String, type: String) {
-        when (type) {
-            "destination" ->
+    fun setOperatorImage(mobileNumber: String) {
+
                 if (mobileNumber.length >= 3) {
                     when (mobileNumber.substring(0, 3)) {
                         "077" -> {
                             ImgDestSim.visibility = View.VISIBLE
                             ImgDestSim.setImageResource(R.drawable.logo_asiacel)
-                            desNumber = "AsiaCell"
+                            sourceNumber = "AsiaCell"
                         }
                         "075" -> {
                             ImgDestSim.visibility = View.VISIBLE
                             ImgDestSim.setImageResource(R.drawable.logo_korek)
-                            desNumber = "Korek"
+                            sourceNumber = "Korek"
                         }
                         "078" -> {
                             ImgDestSim.visibility = View.VISIBLE
                             ImgDestSim.setImageResource(R.drawable.logo_zain)
-                            desNumber = "Zain"
+                            sourceNumber = "Zain"
                         }
                         else -> {
-                            desNumber = ""
+                            sourceNumber = ""
                             ImgDestSim.visibility = View.GONE
                         }
                     }
                 } else {
-                    desNumber = ""
+                    sourceNumber = ""
                     ImgDestSim.visibility = View.GONE
 
                 }
-            "source" -> {
-                if (mobileNumber.length >= 3) {
-                    when (mobileNumber.substring(0, 3)) {
-                        "077" -> {
-                            ImgSourceSim.visibility = View.VISIBLE
-                            ImgSourceSim.setImageResource(R.drawable.logo_asiacel)
-                            sourceNumber = "AsiaCell"
-                        }
-                        "075" -> {
-                            ImgSourceSim.visibility = View.VISIBLE
-                            ImgSourceSim.setImageResource(R.drawable.logo_korek)
-                            sourceNumber = "Korek"
-                        }
-                        "078" -> {
-                            ImgSourceSim.visibility = View.VISIBLE
-                            ImgSourceSim.setImageResource(R.drawable.logo_zain)
-                            sourceNumber = "Zain"
-                        }
-//                        "009" ->{
-//                            ImgSourceSim.visibility = View.VISIBLE
-//                            ImgSourceSim.setImageResource(R.drawable.logo_zain)
-//                            sourceNumber = "Zain"
-//                        }
-                        else -> {
-                            ImgSourceSim.visibility = View.GONE
-                            sourceNumber = ""
-                        }
 
-                    }
-                } else {
-                    sourceNumber = ""
-                    ImgSourceSim.visibility = View.GONE
 
-                }
-            }
-
-        }
     }
 
     @SuppressLint("MissingPermission")
@@ -216,7 +181,7 @@ class ActRecharge : AppCompatActivity() {
                 PERMISSIONS_REQUEST_AsiaCell_USSD_CODE
             )
         } else {     // Permission has already been granted
-            val ussd = "*123*${edCreditTransferAmount.text}*${edBalancePhoneNumber.text}#"
+            val ussd = "*133*${edRechargeAmount.text}#"
 
             startActivity(Intent(Intent.ACTION_CALL,ussdToCallableUri(ussd) ) )
         }
@@ -234,7 +199,7 @@ class ActRecharge : AppCompatActivity() {
                 PERMISSIONS_REQUEST_Korek_USSD_Code
             )
         } else {     // Permission has already been granted
-            val ussd = "*215*${edBalancePhoneNumber.text}*${edCreditTransferAmount.text}#"
+            val ussd = "*221*${edRechargeAmount.text}#"
 
             startActivity(Intent(Intent.ACTION_CALL,  ussdToCallableUri(ussd)))
         }
@@ -244,44 +209,20 @@ class ActRecharge : AppCompatActivity() {
     fun callZainUssdBalanceCode() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ActivityCompat.checkSelfPermission(
                 this!!,
-                Manifest.permission.SEND_SMS
+                Manifest.permission.CALL_PHONE
             ) != PackageManager.PERMISSION_GRANTED
         ) { // Needs permission
             requestPermissions(
-                arrayOf(Manifest.permission.SEND_SMS),
-                PERMISSIONS_REQUEST_Zain_USSD_CODE
+                arrayOf(Manifest.permission.CALL_PHONE),
+                PERMISSIONS_REQUEST_Korek_USSD_Code
             )
         } else {     // Permission has already been granted
-            sendSmsMsgFnc(edSourceNumTransferBalance.text.toString() , "${edBalancePhoneNumber.text} ${edCreditTransferAmount.text}")
+            val ussd = "*101#${edRechargeAmount.text}#"
+
+            startActivity(Intent(Intent.ACTION_CALL,  ussdToCallableUri(ussd)))
         }
     }
 
-    fun sendSmsMsgFnc(mblNumVar: String, smsMsgVar: String) {
-     /*   if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.SEND_SMS
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {*/
-            try {
-                val smsMgrVar = SmsManager.getDefault()
-                smsMgrVar.sendTextMessage(mblNumVar, null, smsMsgVar, null, null)
-                Toast.makeText(
-                    applicationContext, "Message Sent",
-                    Toast.LENGTH_LONG
-                ).show()
-            } catch (ErrVar: Exception) {
-                Toast.makeText(
-                    applicationContext, ErrVar.message.toString(),
-                    Toast.LENGTH_LONG
-                ).show()
-                ErrVar.printStackTrace()
-            }
-    /*    } else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(arrayOf(Manifest.permission.SEND_SMS), 10)
-            }
-        }*/
 
-    }
 
 }
