@@ -17,7 +17,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 
 import ir.hamplus.all_pay.R
+import ir.hamplus.all_pay.utils.DeviceUtil
 import ir.hamplus.all_pay.view.activity.ActPWAWebView
+import ir.hamplus.all_pay.view.activity.ActTransfer
 import kotlinx.android.synthetic.main.ly_activity_main.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -100,12 +102,21 @@ class FrgDashboard : Fragment() {
                 when(i){
                     0->{
                         Log.i("ALL-Pay", i.toString())
-                        /*  val intent = Intent(this@MainActivity, ActivityOne::class.java)
-                          intent.putExtra("info", "This is activity from card item index  $i")
-                          startActivity(intent)*/
+                         val intent = Intent(context, ActTransfer::class.java)
+                          intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                          startActivity(intent)
+
+//                        val int = Intent(context, ActPWAWebView::class.java)
+//
+//                       // int.putExtra("url", url)
+//
+//                        context?.startActivity(int)
                     }
                     1 ->{
                         Log.i("ALL-Pay", i.toString())
+                        val intent = Intent(context, ActTransfer::class.java)
+                        intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                        startActivity(intent)
 
                     }
                     2->{
