@@ -133,7 +133,7 @@ class FrgDashboard : Fragment() {
                     }
                     4 ->{
                         Log.i("ALL-Pay", i.toString())
-                        CallWebViewAct("")
+                        CallWebViewAct("https://erbillifestyle.com/")
 
                     }
                     5->{

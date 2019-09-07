@@ -131,7 +131,7 @@ class ActPWAWebView : AppCompatActivity() {
                     Log.i(TAG, "onPageFinished  , URL=" + url)
                     //  super.onPageFinished(view, url)
                     Log.i(TAG, "onPageFinished  , LoadError=" + loadingError)
-
+                    ly_WebView_AvlLoading.visibility = View.GONE
 
                     // when the inside urls of loading page is containing #
 
