@@ -37,15 +37,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Guideline
 
 
-import androidx.exifinterface.media.ExifInterface
 
-import com.google.gson.Gson
-import com.squareup.picasso.Picasso
-import com.tapadoo.alerter.Alerter
+
 import ir.hamplus.all_pay.R
-import models_m.DynamicModel
-import models_m.data.remote.*
-import utils.extras.GeneralDicModel
+
 import java.io.ByteArrayOutputStream
 import java.io.InputStream
 import java.text.SimpleDateFormat
@@ -70,25 +65,25 @@ object DeviceUtil {
 
     private val VIBRATE_LENGTH_MS = 40
 
-    fun vibrate(context: Context) {
-        try {
-            val mVibrator = context.getSystemService(Service.VIBRATOR_SERVICE) as Vibrator
-            mVibrator?.vibrate(VIBRATE_LENGTH_MS.toLong())
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+//    fun vibrate(context: Context) {
+//        try {
+//            val mVibrator = context.getSystemService(Service.VIBRATOR_SERVICE) as Vibrator
+//            mVibrator?.vibrate(VIBRATE_LENGTH_MS.toLong())
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//
+//    }
 
-    }
-
-    fun vibrate(context: Context, length: Int) {
-        try {
-            val mVibrator = context.getSystemService(Service.VIBRATOR_SERVICE) as Vibrator
-            mVibrator?.vibrate(length.toLong())
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-
-    }
+//    fun vibrate(context: Context, length: Int) {
+//        try {
+//            val mVibrator = context.getSystemService(Service.VIBRATOR_SERVICE) as Vibrator
+//            mVibrator?.vibrate(length.toLong())
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
+//
+//    }
 
     fun isLocationEnabled(context: Context?): Boolean {
         if (context == null)
@@ -176,35 +171,35 @@ object DeviceUtil {
     }
 
 
-    fun fetchMenuItems(context: Context): MutableList<MenuModel> {
-        val rawDynamic = getPrefStrValues(context, "menu_architecture") ?: return mutableListOf()
-        val dynamic = Gson().fromJson(rawDynamic, DynamicModel::class.java)
-        return dynamic?.sideMenu?.menus ?: mutableListOf()
-    }
+//    fun fetchMenuItems(context: Context): MutableList<MenuModel> {
+//        val rawDynamic = getPrefStrValues(context, "menu_architecture") ?: return mutableListOf()
+//        val dynamic = Gson().fromJson(rawDynamic, DynamicModel::class.java)
+//        return dynamic?.sideMenu?.menus ?: mutableListOf()
+//    }
 
     // NavigationView Drawer menu items icon set & Sizes
-    fun setImageDrawable(context: Context, url: String, menuItem: MenuItem) {
-        val uri = Uri.parse(url)
-        val marker = PicassoMarker(context, menuItem)
-
-        Picasso.get()
-            .load(uri)
-            // .noFade()
-            // change Size of Menu items when added to menu  it doesn't work just make quality lower
-            //  .resize(40.pxToSP(context),15.pxToSP(context))
-            //   .fit()
-            .into(marker).apply {
-                object : com.squareup.picasso.Callback {
-                    override fun onSuccess() {
-                        print("success")
-                    }
-
-                    override fun onError(e: Exception) {
-                        print("failure")
-                    }
-                }
-            }
-    }
+//    fun setImageDrawable(context: Context, url: String, menuItem: MenuItem) {
+//        val uri = Uri.parse(url)
+//        val marker = PicassoMarker(context, menuItem)
+//
+//        Picasso.get()
+//            .load(uri)
+//            // .noFade()
+//            // change Size of Menu items when added to menu  it doesn't work just make quality lower
+//            //  .resize(40.pxToSP(context),15.pxToSP(context))
+//            //   .fit()
+//            .into(marker).apply {
+//                object : com.squareup.picasso.Callback {
+//                    override fun onSuccess() {
+//                        print("success")
+//                    }
+//
+//                    override fun onError(e: Exception) {
+//                        print("failure")
+//                    }
+//                }
+//            }
+//    }
     //Added for Exit item in Menu
     /* fun setImageDrawableFromResource(context: Context,url : String,menuItem : MenuItem){
          val uri = Uri.parse(url)
@@ -263,64 +258,64 @@ object DeviceUtil {
         return getter.getString(key, "")
     }
 
-    fun showToast(context: Context?, s: String) {
-
-        if (context == null)
-            return
-
-        if (context is Activity) {
-            if ((context as Activity).isFinishing) {
-                return
-            }
-        }
-        val inflater = LayoutInflater.from(context)
-
-        val layout = inflater.inflate(R.layout.ly_custom_toast, null)
-        val text = layout.findViewById<AppCompatTextView>(R.id.ly_custom_toast_Text)
-        text.text = s
-
-        val toast = Toast(context)
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100f.dpToPx())
-        toast.duration = Toast.LENGTH_SHORT
-        toast.view = layout
-        toast.show()
-    }
+//    fun showToast(context: Context?, s: String) {
+//
+//        if (context == null)
+//            return
+//
+//        if (context is Activity) {
+//            if ((context as Activity).isFinishing) {
+//                return
+//            }
+//        }
+//        val inflater = LayoutInflater.from(context)
+//
+//        val layout = inflater.inflate(R.layout.ly_custom_toast, null)
+//        val text = layout.findViewById<AppCompatTextView>(R.id.ly_custom_toast_Text)
+//        text.text = s
+//
+//        val toast = Toast(context)
+//        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100f.dpToPx())
+//        toast.duration = Toast.LENGTH_SHORT
+//        toast.view = layout
+//        toast.show()
+//    }
 
     // @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-    fun showAlertMsg(
-        context: Activity?,
-        s: String,
-        hasColor: Boolean = false,
-        color: Int? = null,
-        duration: Long = 2000
-    ) {
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
-            context?.let {
-                var alerter = Alerter.create(context)
-                    // .setTitle("خطا")
-                    .setText(s)
-                    .setContentGravity(Gravity.CENTER)
-                    // .setBackgroundColorInt(Color.RED)
-                    .setDuration(duration)
-                    .enableSwipeToDismiss()
-                //  .setTextTypeface(Typeface.createFromAsset( , "ScopeOne-Regular.ttf"))
-                if (hasColor) {
-                    alerter.setBackgroundColorInt(color!!)
-                } else {
-                    var d: Drawable = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        context!!.resources.getDrawable(R.drawable.alert_background, context.theme)
-                    } else {
-                        context!!.resources.getDrawable(R.drawable.alert_background)
-                    }
-                    alerter.setBackgroundDrawable(d)
-                }
-                alerter.show()
-            }
-        } else {
-
-            showToast(context, s)
-        }
-    }
+//    fun showAlertMsg(
+//        context: Activity?,
+//        s: String,
+//        hasColor: Boolean = false,
+//        color: Int? = null,
+//        duration: Long = 2000
+//    ) {
+//        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+//            context?.let {
+//                var alerter = Alerter.create(context)
+//                    // .setTitle("خطا")
+//                    .setText(s)
+//                    .setContentGravity(Gravity.CENTER)
+//                    // .setBackgroundColorInt(Color.RED)
+//                    .setDuration(duration)
+//                    .enableSwipeToDismiss()
+//                //  .setTextTypeface(Typeface.createFromAsset( , "ScopeOne-Regular.ttf"))
+//                if (hasColor) {
+//                    alerter.setBackgroundColorInt(color!!)
+//                } else {
+//                    var d: Drawable = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                        context!!.resources.getDrawable(R.drawable.alert_background, context.theme)
+//                    } else {
+//                        context!!.resources.getDrawable(R.drawable.alert_background)
+//                    }
+//                    alerter.setBackgroundDrawable(d)
+//                }
+//                alerter.show()
+//            }
+//        } else {
+//
+//            showToast(context, s)
+//        }
+//    }
 
     fun checkValidMobile(s: CharSequence): Boolean {
         return s.toString().startsWith("09") && s.length == 11
@@ -427,39 +422,39 @@ object DeviceUtil {
     }
 */
 
-    fun setProfilePicByPicasso(url: String, view: AppCompatImageView, w: Int = 220, h: Int = 220) {
-        Picasso.get()
-            .load(url)
-            .resize(h, w) // h==w for show Round Imace in circle
-            //.centerInside()
-            //  .transform( CropCircleTransformation())
-            //   .transform( CropTransformation(200,200))
-            .into(view)
-
-        //  val uri = Uri.parse(url)
-        /*  Picasso.get()
-              .load(pic)
-              .noFade()
-              .into(imgV_Profile_pic).apply {
-                  object : com.squareup.picasso.Callback {
-                      override fun onSuccess() {
-                          Log.i(TAG, " onSuccess")
-                      }
-
-                      override fun onError(e: Exception) {
-                          Log.i(TAG, "onError")
-                      }
-                  }
-              }*/
-
-        /*   Glide.with(this@ActMain)
-                 .load(imageUrl )
-               .into(imgV_Profile_pic)
-           Log.i(TAG, "onDrawerOpened,  Asynch image set done" )
-               Log.i(TAG, "onDrawerOpened,  uiThread " )
-               imgV_Profile_pic.scaleType = ImageView.ScaleType.FIT_CENTER*/
-    }
-
+//    fun setProfilePicByPicasso(url: String, view: AppCompatImageView, w: Int = 220, h: Int = 220) {
+//        Picasso.get()
+//            .load(url)
+//            .resize(h, w) // h==w for show Round Imace in circle
+//            //.centerInside()
+//            //  .transform( CropCircleTransformation())
+//            //   .transform( CropTransformation(200,200))
+//            .into(view)
+//
+//        //  val uri = Uri.parse(url)
+//        /*  Picasso.get()
+//              .load(pic)
+//              .noFade()
+//              .into(imgV_Profile_pic).apply {
+//                  object : com.squareup.picasso.Callback {
+//                      override fun onSuccess() {
+//                          Log.i(TAG, " onSuccess")
+//                      }
+//
+//                      override fun onError(e: Exception) {
+//                          Log.i(TAG, "onError")
+//                      }
+//                  }
+//              }*/
+//
+//        /*   Glide.with(this@ActMain)
+//                 .load(imageUrl )
+//               .into(imgV_Profile_pic)
+//           Log.i(TAG, "onDrawerOpened,  Asynch image set done" )
+//               Log.i(TAG, "onDrawerOpened,  uiThread " )
+//               imgV_Profile_pic.scaleType = ImageView.ScaleType.FIT_CENTER*/
+//    }
+//
 
 
 
