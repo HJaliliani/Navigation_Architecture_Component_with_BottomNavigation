@@ -37,7 +37,7 @@ class ActTransfer : AppCompatActivity() {
 
        setOperatorImage(edSourceNumTransferBalance.text.toString(), "source")
 
-        edDestCreditTransferPhoneNumber.addTextChangedListener(object :
+        edBalancePhoneNumber.addTextChangedListener(object :
             TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
@@ -216,7 +216,7 @@ class ActTransfer : AppCompatActivity() {
                 PERMISSIONS_REQUEST_AsiaCell_USSD_CODE
             )
         } else {     // Permission has already been granted
-            val ussd = "*123*${edCreditTransferAmount.text}*${edDestCreditTransferPhoneNumber.text}#"
+            val ussd = "*123*${edCreditTransferAmount.text}*${edBalancePhoneNumber.text}#"
 
             startActivity(Intent(Intent.ACTION_CALL,ussdToCallableUri(ussd) ) )
         }
@@ -234,7 +234,7 @@ class ActTransfer : AppCompatActivity() {
                 PERMISSIONS_REQUEST_Korek_USSD_Code
             )
         } else {     // Permission has already been granted
-            val ussd = "*215*${edDestCreditTransferPhoneNumber.text}*${edCreditTransferAmount.text}#"
+            val ussd = "*215*${edBalancePhoneNumber.text}*${edCreditTransferAmount.text}#"
 
             startActivity(Intent(Intent.ACTION_CALL,  ussdToCallableUri(ussd)))
         }
@@ -252,7 +252,7 @@ class ActTransfer : AppCompatActivity() {
                 PERMISSIONS_REQUEST_Zain_USSD_CODE
             )
         } else {     // Permission has already been granted
-            sendSmsMsgFnc(edSourceNumTransferBalance.text.toString() , "${edDestCreditTransferPhoneNumber.text} ${edCreditTransferAmount.text}")
+            sendSmsMsgFnc(edSourceNumTransferBalance.text.toString() , "${edBalancePhoneNumber.text} ${edCreditTransferAmount.text}")
         }
     }
 

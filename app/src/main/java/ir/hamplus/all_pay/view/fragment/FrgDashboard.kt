@@ -18,6 +18,7 @@ import androidx.navigation.ui.setupWithNavController
 
 import ir.hamplus.all_pay.R
 import ir.hamplus.all_pay.utils.DeviceUtil
+import ir.hamplus.all_pay.view.activity.ActBalance
 import ir.hamplus.all_pay.view.activity.ActPWAWebView
 import ir.hamplus.all_pay.view.activity.ActTransfer
 import kotlinx.android.synthetic.main.ly_activity_main.*
@@ -102,7 +103,7 @@ class FrgDashboard : Fragment() {
                 when(i){
                     0->{
                         Log.i("ALL-Pay", i.toString())
-                         val intent = Intent(context, ActTransfer::class.java)
+                         val intent = Intent(context, ActBalance::class.java)
                           intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                           startActivity(intent)
 
