@@ -243,7 +243,7 @@
                             android:text="Recharge Balance"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>

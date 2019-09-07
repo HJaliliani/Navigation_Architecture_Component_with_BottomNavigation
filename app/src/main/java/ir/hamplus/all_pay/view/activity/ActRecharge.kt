@@ -30,7 +30,7 @@ class ActRecharge : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_act_transfer)
+        setContentView(R.layout.ly_act_recharge)
 
 
         if (intent.hasExtra("Mobile"))
@@ -52,7 +52,7 @@ class ActRecharge : AppCompatActivity() {
             }
         })
 
-        edSourceNumTransferBalance.addTextChangedListener(object :
+        edRechargeMobileNumber.addTextChangedListener(object :
             TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
@@ -66,7 +66,7 @@ class ActRecharge : AppCompatActivity() {
             }
         })
 
-        btn_transferCredit.setOnClickListener {
+        btn_recharge.setOnClickListener {
             if (sourceNumber.length>0 ) {
                 when (sourceNumber) {
                     "AsiaCell" ->{
