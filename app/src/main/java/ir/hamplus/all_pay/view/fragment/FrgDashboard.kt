@@ -164,7 +164,7 @@ class FrgDashboard : Fragment() {
                     9->{
                         Log.i("ALL-Pay", i.toString())
 
-                        CallWebViewAct("https://www.bing.com/maps?osid=c354e4c8-b1a8-4b39-ae57-e9f1abfdb9a5&cp=35.571497~45.438427&lvl=13&v=2&sV=2&form=S00027")
+                        CallWebViewAct("https://caesar-restaurant-cafe.business.site/")
 
                     }
                     10 ->{
