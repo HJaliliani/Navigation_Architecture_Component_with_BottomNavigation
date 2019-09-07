@@ -54,6 +54,45 @@
 
                 <!-- Row 1 -->
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="8dp"
+
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/mic2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" Talk with Me"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
                 <!-- Column 1 -->
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
@@ -75,8 +114,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:scaleType="fitXY"
                             app:srcCompat="@drawable/ic_wallet_solid" />
@@ -84,7 +123,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="    IQD"
+                            android:text="Balance(IQD)"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="16sp"
@@ -114,8 +153,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_transfer" />
 
@@ -155,10 +194,10 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_pay_bill" />
+                            app:srcCompat="@drawable/ic_pay_bill" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -193,8 +232,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_money_transfer" />
 
@@ -234,10 +273,10 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_events" />
+                            app:srcCompat="@drawable/ic_events" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -272,8 +311,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_hotel_solid" />
 
@@ -309,8 +348,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_question_circle_regular" />
 
@@ -346,8 +385,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_map_marked_solid" />
 
@@ -383,8 +422,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_plane_departure_solid" />
 
@@ -420,8 +459,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_resturants" />
 
@@ -429,6 +468,43 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Resturants"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_horizontal"
+                            app:srcCompat="@drawable/ic_pay_bill" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bill Pay"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
                             android:textSize="18sp"
