@@ -1,7 +1,8 @@
 package ir.hamplus.all_pay.view.activity
 
 import android.Manifest
- import android.os.Bundle
+import android.app.Activity
+import android.os.Bundle
  import android.widget.Toast
 import android.content.ActivityNotFoundException
 import android.speech.RecognizerIntent
@@ -97,7 +98,7 @@ class ActSpech : AppCompatActivity() {
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
             )
             //intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.KOREAN)
-            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ko-KR")//Korean (South Korea)
+            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ar-IQ")//Korean (South Korea)
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak")
 
             try {
@@ -122,9 +123,14 @@ class ActSpech : AppCompatActivity() {
                 val result = data
                     .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
                 tv_result?.text=result[0].toString()
-               if (tv_result.text.toString().contains("balance")){
+                // finish()
+               if (tv_result.text.toString().contains("balance")  or tv_result.text.toString().contains("transfer")){
 
-               }
+                   var returnIntent = Intent(this, ActSpech::class.java)
+                   returnIntent.putExtra("speech",   tv_result.text.toString())
+                   setResult(AppCompatActivity.RESULT_OK, returnIntent)
+                   finish()
+                }
             }
         }
     }

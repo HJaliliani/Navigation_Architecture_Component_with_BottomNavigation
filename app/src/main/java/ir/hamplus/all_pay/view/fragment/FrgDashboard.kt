@@ -1,10 +1,12 @@
 package ir.hamplus.all_pay.view.fragment
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -20,8 +23,10 @@ import ir.hamplus.all_pay.R
 import ir.hamplus.all_pay.utils.DeviceUtil
 import ir.hamplus.all_pay.view.activity.ActBalance
 import ir.hamplus.all_pay.view.activity.ActPWAWebView
+import ir.hamplus.all_pay.view.activity.ActSpech
 import ir.hamplus.all_pay.view.activity.ActTransfer
 import kotlinx.android.synthetic.main.ly_activity_main.*
+import kotlinx.android.synthetic.main.ly_speech.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,7 +47,7 @@ class FrgDashboard : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
-
+  var ReqCode = 200
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -101,10 +106,14 @@ class FrgDashboard : Fragment() {
             val cardView = mainGrid.getChildAt(i) as CardView
             cardView.setOnClickListener {
                 when(i){
-                    0->{
+                    0 ->{
+                        val intent = Intent(context, ActSpech::class.java)
+                        startActivityForResult(intent, ReqCode)
+                    }
+                    1->{
                         Log.i("ALL-Pay", i.toString())
                          val intent = Intent(context, ActBalance::class.java)
-                          intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                         // intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                           startActivity(intent)
 
 //                        val int = Intent(context, ActPWAWebView::class.java)
@@ -113,66 +122,66 @@ class FrgDashboard : Fragment() {
 //
 //                        context?.startActivity(int)
                     }
-                    1 ->{
+                    2 ->{
                         Log.i("ALL-Pay", i.toString())
                         val intent = Intent(context, ActTransfer::class.java)
                         intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
                         startActivity(intent)
 
                     }
-                    2->{
+                    3->{
                         Log.i("ALL-Pay", i.toString())
 
                         CallWebViewAct("https://www.bazaryonline.com/")
 
                     }
-                    3->{
+                    4->{
 
                         Log.i("ALL-Pay", i.toString())
                         //CallWebViewAct("")
                         Toast.makeText(context,"Comming Soon",Toast.LENGTH_LONG).show()
 
                     }
-                    4 ->{
+                    5 ->{
                         Log.i("ALL-Pay", i.toString())
                         CallWebViewAct("https://erbillifestyle.com/")
 
                     }
-                    5->{
+                    6->{
                         Log.i("ALL-Pay", i.toString())
                         CallWebViewAct("https://www.booking.com/city/iq/as-sulaymaniyah.en-gb.html?aid=356980;label=gog235jc-1DCAMobkIPYXMtc3VsYXltYW5peWFoSDNYA2huiAEBmAEJuAEHyAEM2AED6AEBiAIBqAIDuALCuM3rBcACAQ;sid=9b936d76b719240e6eeb2911750cda96;inac=0&keep_landing=1&")
 
                     }
-                    6->{
+                    7->{
                         Log.i("ALL-Pay", i.toString())
 
 
                         CallWebViewAct("https://en.wikipedia.org/wiki/Sulaymaniyah")
 
                     }
-                    7 ->{
+                    8 ->{
                         Log.i("ALL-Pay", i.toString())
 
 
                         CallWebViewAct("https://www.google.com/maps/search/sulaymaniyah+city+tourist+map/@35.5641964,45.3568317,14z/data=!3m1!4b1")
                     }
-                    8->{
+                    9->{
                         Log.i("ALL-Pay", i.toString())
                         CallWebViewAct("https://www.skyscanner.net/flights-from/isu/cheap-flights-from-sulaymaniyah-international-airport.html")
 
                     }
-                    9->{
+                    10->{
                         Log.i("ALL-Pay", i.toString())
 
                         CallWebViewAct("https://caesar-restaurant-cafe.business.site/")
 
                     }
-                    10 ->{
+                    11 ->{
                         Log.i("ALL-Pay", i.toString())
                        // CallWebViewAct("")
 
                     }
-                    11->{
+                    12->{
                         Log.i("ALL-Pay", i.toString())
                       //  CallWebViewAct("")
 
@@ -184,7 +193,33 @@ class FrgDashboard : Fragment() {
         }
     }
 
-fun CallWebViewAct(url : String ){
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode==ReqCode){
+            if (resultCode == Activity.RESULT_OK && data!=null) {
+                val result = data
+                    .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                tv_result?.text=result[0].toString()
+
+                    data?.extras?.get("speech")?.let {
+                        if (data?.extras?.get("speech").toString().contains("balance") or  data?.extras?.get("speech").toString().contains("ba") or data?.extras?.get("speech").toString().contains("بالانس") or data?.extras?.get("speech").toString().contains("اعتبار") or data?.extras?.get("speech").toString().contains("رصید") or data?.extras?.get("speech").toString().contains("receipt")   ){
+                            val intent = Intent(context, ActBalance::class.java)
+                            intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                            startActivity(intent)
+                    } else if (data?.extras?.get("speech").toString().contains("transfer")){
+                             val intent = Intent(context, ActTransfer::class.java)
+                            intent.putExtra("Mobile", DeviceUtil.getPrefStrValues(context, "Mobile"))
+                            startActivity(intent)
+
+                        }
+
+                }
+            }
+        }
+    }
+
+    fun CallWebViewAct(url : String ){
         val int = Intent(context, ActPWAWebView::class.java)
 
 
