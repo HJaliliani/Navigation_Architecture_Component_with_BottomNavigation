@@ -153,8 +153,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_transfer" />
 
@@ -194,8 +194,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_pay_bill" />
 
@@ -232,8 +232,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_money_transfer" />
 
@@ -273,8 +273,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_events" />
 
@@ -496,8 +496,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
                             android:layout_gravity="center_horizontal"
                             app:srcCompat="@drawable/ic_pay_bill" />
 

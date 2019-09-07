@@ -18,7 +18,7 @@ class ActSpech : AppCompatActivity() {
 
     companion object{
          val arrForBalance = arrayOf<String>("balance","ba","بالانس" ,"اعتبار" , "receipt" , "رصید", "رصید", "rece",   "reci")
-        val arrForTransfer = arrayOf<String>("transfer","ziad","vener","bener","trans","vener","bener","venera","bi" , "be", "mir", "ben", "venira" )
+        val arrForTransfer = arrayOf<String>("transfer","ziad","vener","bener","trans","vener","bener","venera","bi" , "be", "mir", "ben", "venira" , "vanilla", "vanila")
 
     }
     private val REQ_CODE = 100
@@ -41,6 +41,9 @@ class ActSpech : AppCompatActivity() {
             //https://cloud.google.com/speech-to-text/docs/languages
             intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "fa-IR")//Persian (Iran)
             intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak")
+            intent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 3000)
+
+
 
             try {
                 startActivityForResult(intent, REQ_CODE)
