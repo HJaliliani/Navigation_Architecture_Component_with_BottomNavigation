@@ -31,9 +31,10 @@ class ActBalance : AppCompatActivity() {
 
         if (intent.hasExtra("Mobile")) {
             mobile = intent.extras["Mobile"]?.toString().toString()
-            if (mobile.length>0)
+            if (mobile.length>= 3) {
                 edBalancePhoneNumber.setText(mobile)
-            detectPhoneAndCallOperatorBalance(mobile)
+                detectPhoneAndCallOperatorBalance(mobile)
+            }
          }
 
         btnBalance.setOnClickListener {

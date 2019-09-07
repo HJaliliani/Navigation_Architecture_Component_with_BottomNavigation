@@ -127,8 +127,10 @@ class FrgDashboard : Fragment() {
 
                     }
                     3->{
+
                         Log.i("ALL-Pay", i.toString())
-                        CallWebViewAct("")
+                        //CallWebViewAct("")
+                        Toast.makeText(context,"Comming Soon",Toast.LENGTH_LONG).show()
 
                     }
                     4 ->{
@@ -145,17 +147,18 @@ class FrgDashboard : Fragment() {
                         Log.i("ALL-Pay", i.toString())
 
 
-                        CallWebViewAct("")
+                        CallWebViewAct("https://en.wikipedia.org/wiki/Sulaymaniyah")
 
                     }
                     7 ->{
                         Log.i("ALL-Pay", i.toString())
 
 
+                        CallWebViewAct("https://www.google.com/maps/search/sulaymaniyah+city+tourist+map/@35.5641964,45.3568317,14z/data=!3m1!4b1")
                     }
                     8->{
                         Log.i("ALL-Pay", i.toString())
-                        CallWebViewAct("")
+                        CallWebViewAct("https://www.skyscanner.net/flights-from/isu/cheap-flights-from-sulaymaniyah-international-airport.html")
 
                     }
                     9->{
@@ -166,12 +169,12 @@ class FrgDashboard : Fragment() {
                     }
                     10 ->{
                         Log.i("ALL-Pay", i.toString())
-                        CallWebViewAct("")
+                       // CallWebViewAct("")
 
                     }
                     11->{
                         Log.i("ALL-Pay", i.toString())
-                        CallWebViewAct("")
+                      //  CallWebViewAct("")
 
                     }
 
