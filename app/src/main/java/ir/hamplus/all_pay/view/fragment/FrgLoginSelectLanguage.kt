@@ -1,4 +1,4 @@
-package ir.hamplus.nac_bottom_navigation.view.fragment
+package ir.hamplus.all_pay.view.fragment
 
 import android.content.Context
 import android.net.Uri
@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 
-import ir.hamplus.nac_bottom_navigation.R
+import ir.hamplus.all_pay.R
+import kotlinx.android.synthetic.main.ly_frg_select_language.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,24 +20,20 @@ private const val ARG_PARAM2 = "param2"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [FrgNotifications.OnFragmentInteractionListener] interface
+ * [FragmentSelectLanguage.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [FrgNotifications.newInstance] factory method to
+ * Use the [FragmentSelectLanguage.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class FrgNotifications : Fragment() {
+class FragmentSelectLanguage : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -43,7 +41,15 @@ class FrgNotifications : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ly_frg_notifications, container, false)
+        return inflater.inflate(R.layout.ly_frg_select_language, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btn_next_frg_get_mobile.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentSelectLanguage_to_fragmentLoginGetMobile)
+        }
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -56,7 +62,7 @@ class FrgNotifications : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-      //      throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 
@@ -88,12 +94,12 @@ class FrgNotifications : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FrgNotifications.
+         * @return A new instance of fragment FragmentSelectLanguage.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FrgNotifications().apply {
+            FragmentSelectLanguage().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

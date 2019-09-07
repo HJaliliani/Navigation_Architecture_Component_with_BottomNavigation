@@ -1,4 +1,4 @@
-package ir.hamplus.nac_bottom_navigation.view.activity
+package ir.hamplus.all_pay.view.activity
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.ly_activity_main.*
 import androidx.navigation.ui.setupWithNavController
-import ir.hamplus.nac_bottom_navigation.R
+import ir.hamplus.all_pay.R
 
 
 class MainActivity : AppCompatActivity() {
@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         //Method 1 to connect BottomNavigation with Navigation controller
         val navControl = findNavController( R.id.nav_host_frag_main)
         bottomNavigationView?.setupWithNavController(navControl)
+
+        bottomNavigationView.setSelectedItemId(R.id.frgDashboard);
 
         //Method2:
        /*  val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_frag_main) as NavHostFragment?

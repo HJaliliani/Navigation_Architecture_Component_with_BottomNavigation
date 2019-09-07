@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">NAC_with_BottomNavigation</string>
+    <string name="app_name">All Pay</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="get_mobile">Fragment 2 : Get Mobile Number</string>
+    <string name="get_mobile">Mobile Number :</string>
     <string name="verify_mobile">Fragment 3 : Verify Mobile Number</string>
     <string name="title_activity_login_pages_nav_host">ActivityLoginPagesNavHost</string>
-    <string name="select_language">Fragment 1 : Select language</string>
-    <string name="next_fragment">Next Fragment</string>
-    <string name="next_activity">Next Navigation Activity</string>
+    <string name="select_language">Select language</string>
+    <string name="next_fragment">Enter</string>
+    <string name="next_activity">Verify</string>
 
     <string-array name="languagesList">
         <item>English</item>
