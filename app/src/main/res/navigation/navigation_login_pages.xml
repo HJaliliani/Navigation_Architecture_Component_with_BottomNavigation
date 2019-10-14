@@ -7,8 +7,11 @@
     <fragment android:id="@+id/fragmentLoginGetMobile"
               android:name="ir.hamplus.nac_bottom_navigation.view.fragment.FragmentLoginGetMobile"
               android:label="ly_fragment_login_get_mobile" tools:layout="@layout/fragment_login_get_mobile">
-        <action android:id="@+id/action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode"
-                app:destination="@id/fragmentLoginVerifyCode" app:enterAnim="@anim/nav_default_pop_enter_anim"/>
+        <action
+                android:id="@+id/action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode"
+                app:destination="@id/fragmentLoginVerifyCode"
+                app:enterAnim="@anim/nav_default_pop_enter_anim"
+                app:popUpTo="@+id/fragmentSelectLanguage" />
         <action
                 android:id="@+id/action_fragmentLoginGetMobile_to_listFragment"
                 app:destination="@id/listFragment" />
@@ -24,9 +27,11 @@
     <fragment android:id="@+id/fragmentSelectLanguage"
               android:name="ir.hamplus.nac_bottom_navigation.view.fragment.FragmentSelectLanguage"
               android:label="ly_fragment_select_language" tools:layout="@layout/fragment_select_language">
-        <action android:id="@+id/action_fragmentSelectLanguage_to_fragmentLoginGetMobile"
-                app:destination="@id/fragmentLoginGetMobile" app:enterAnim="@anim/nav_default_pop_enter_anim"
-        />
+        <action
+                android:id="@+id/action_fragmentSelectLanguage_to_fragmentLoginGetMobile"
+                app:destination="@id/fragmentLoginGetMobile"
+                app:enterAnim="@anim/nav_default_pop_enter_anim"
+                app:popUpToInclusive="true" />
     </fragment>
     <activity android:id="@+id/mainActivity"
               android:name="ir.hamplus.nac_bottom_navigation.view.activity.MainActivity"
@@ -38,7 +43,13 @@
             android:label="ListFragment" >
         <action
                 android:id="@+id/action_listFragment_to_paramsFragment"
-                app:destination="@id/paramsFragment" />
+                app:destination="@id/paramsFragment" >
+            <argument
+                    android:name="param1"
+                    android:defaultValue="nul" />
+            <argument android:defaultValue="null"
+                    android:name="param2" />
+        </action>
     </fragment>
     <fragment
             android:id="@+id/paramsFragment"

@@ -27,8 +27,14 @@ class ParamsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+           //Parameters: Arguments
+         /*   param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)*/
+
+            //Safe Arguments Call
+            val act = ParamsFragmentArgs.fromBundle(it)
+            param1 = act.param1  // it.getString(ARG_PARAM1)
+            param2 =  act.param2  //it.getString(ARG_PARAM2)
         }
     }
 

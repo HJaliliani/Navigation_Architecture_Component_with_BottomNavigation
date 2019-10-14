@@ -16,15 +16,17 @@ class ActivityLoginPagesNavHost : AppCompatActivity() ,
         Log.i("Navigation", "Selected $item")
 
        // Call by Arguments
-        val arguments = Bundle()
+       /* val arguments = Bundle()
         arguments.putString("param1", "Mojtaba")
         arguments.putString("param2", "Mousavi Mehman Dusti ${item.toString()}"  )
         findNavController(R.id.nav_host_frag_login_pages).navigate(R.id.action_listFragment_to_paramsFragment, arguments)
+            */
+
         //Call by SafeArgs
-       /* val action = ListFragmentDirections.actionListFragmentToParamsFragment()
-        action.param1 = "param1"
-        action.param2 = "Param2"
-        findNavController(R.id.nav_host_frag_login_pages).navigate(action)*/
+        val action = ListFragmentDirections.actionListFragmentToParamsFragment()
+        action.param1 = "p11111"
+        action.param2 = "P222222"
+        findNavController(R.id.nav_host_frag_login_pages).navigate(action)
 
 
     }
