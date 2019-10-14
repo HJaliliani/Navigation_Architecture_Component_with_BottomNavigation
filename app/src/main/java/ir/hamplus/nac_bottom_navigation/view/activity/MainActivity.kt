@@ -4,14 +4,8 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.onNavDestinationSelected
-import kotlinx.android.synthetic.main.ly_activity_main.*
-import androidx.navigation.ui.setupWithNavController
+import kotlinx.android.synthetic.main.activity_main.*
 import ir.hamplus.nac_bottom_navigation.R
 
 
@@ -43,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.ly_activity_main)
+        setContentView(R.layout.activity_main)
 
         //Method 1 to connect BottomNavigation with Navigation controller
    /*     val navControl = findNavController( R.id.nav_host_frag_main)

@@ -1,6 +1,5 @@
 package ir.hamplus.nac_bottom_navigation.view.fragment
 
-import android.app.Application
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -11,15 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import ir.hamplus.nac_bottom_navigation.R
-import ir.hamplus.nac_bottom_navigation.view.activity.ActivityLoginPagesNavHost
-import kotlinx.android.synthetic.main.ly_frg_login_verify_code.*
-import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
-import androidx.core.app.NavUtils
-import androidx.navigation.ActivityNavigator
-import androidx.navigation.Navigation
-import ir.hamplus.nac_bottom_navigation.view.activity.MainActivity
-import kotlinx.android.synthetic.main.ly_activity_main.*
+import kotlinx.android.synthetic.main.fragment_login_verify_code.*
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -55,22 +46,19 @@ class FragmentLoginVerifyCode : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ly_frg_login_verify_code, container, false)
+        return inflater.inflate(R.layout.fragment_login_verify_code, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         btn_next_navigation_activity.setOnClickListener {
-
-           //method 1 to call  main pages activity (Contain navigation graph2)
-        //   Navigation.findNavController(view).navigate(R.id.mainActivity)
-
            //method 2 to call  main pages activity (Contain navigation graph2)
            findNavController().navigate(R.id.action_fragmentLoginVerifyCode_to_mainActivity)
-
-
         }
+
+
+
     }
 
 

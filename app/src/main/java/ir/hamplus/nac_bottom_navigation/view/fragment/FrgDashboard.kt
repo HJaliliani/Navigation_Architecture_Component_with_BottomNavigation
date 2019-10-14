@@ -43,7 +43,7 @@ class FrgDashboard : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ly_frg_dashboard, container, false)
+        return inflater.inflate(R.layout.fragment_dashboard, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

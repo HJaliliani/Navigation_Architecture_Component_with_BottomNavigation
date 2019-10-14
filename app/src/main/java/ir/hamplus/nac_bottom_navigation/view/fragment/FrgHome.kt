@@ -43,7 +43,7 @@ class FrgHome : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ly_frg_home, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event

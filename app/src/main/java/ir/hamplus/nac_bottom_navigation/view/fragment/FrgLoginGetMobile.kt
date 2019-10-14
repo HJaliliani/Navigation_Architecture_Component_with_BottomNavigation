@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 
 import ir.hamplus.nac_bottom_navigation.R
-import kotlinx.android.synthetic.main.ly_frg_login_get_mobile.*
+import kotlinx.android.synthetic.main.fragment_login_get_mobile.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -48,6 +48,10 @@ class FragmentLoginGetMobile : Fragment() {
             findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode)
 
         }
+
+        btn_list_frag.setOnClickListener {
+            findNavController().navigate(R.id.action_fragmentLoginGetMobile_to_listFragment)
+        }
     }
 
     override fun onCreateView(
@@ -55,7 +59,7 @@ class FragmentLoginGetMobile : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.ly_frg_login_get_mobile, container, false)
+        return inflater.inflate(R.layout.fragment_login_get_mobile, container, false)
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -68,7 +72,7 @@ class FragmentLoginGetMobile : Fragment() {
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
-//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//          throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
 

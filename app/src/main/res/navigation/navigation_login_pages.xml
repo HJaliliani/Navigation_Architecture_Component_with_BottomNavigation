@@ -6,13 +6,16 @@
 
     <fragment android:id="@+id/fragmentLoginGetMobile"
               android:name="ir.hamplus.nac_bottom_navigation.view.fragment.FragmentLoginGetMobile"
-              android:label="ly_fragment_login_get_mobile" tools:layout="@layout/ly_frg_login_get_mobile">
+              android:label="ly_fragment_login_get_mobile" tools:layout="@layout/fragment_login_get_mobile">
         <action android:id="@+id/action_fragmentLoginGetMobile_to_fragmentLoginVerifyCode"
                 app:destination="@id/fragmentLoginVerifyCode" app:enterAnim="@anim/nav_default_pop_enter_anim"/>
+        <action
+                android:id="@+id/action_fragmentLoginGetMobile_to_listFragment"
+                app:destination="@id/listFragment" />
     </fragment>
     <fragment android:id="@+id/fragmentLoginVerifyCode"
               android:name="ir.hamplus.nac_bottom_navigation.view.fragment.FragmentLoginVerifyCode"
-              android:label="ly_fragment_login_verify_code" tools:layout="@layout/ly_frg_login_verify_code">
+              android:label="ly_fragment_login_verify_code" tools:layout="@layout/fragment_login_verify_code">
         <action android:id="@+id/action_fragmentLoginVerifyCode_to_mainActivity" app:destination="@id/mainActivity"
                 app:enterAnim="@anim/nav_default_enter_anim"
                 app:popUpTo="@+id/mainActivity" app:popUpToInclusive="true" app:launchSingleTop="true"
@@ -20,12 +23,37 @@
     </fragment>
     <fragment android:id="@+id/fragmentSelectLanguage"
               android:name="ir.hamplus.nac_bottom_navigation.view.fragment.FragmentSelectLanguage"
-              android:label="ly_fragment_select_language" tools:layout="@layout/ly_frg_select_language">
+              android:label="ly_fragment_select_language" tools:layout="@layout/fragment_select_language">
         <action android:id="@+id/action_fragmentSelectLanguage_to_fragmentLoginGetMobile"
                 app:destination="@id/fragmentLoginGetMobile" app:enterAnim="@anim/nav_default_pop_enter_anim"
         />
     </fragment>
     <activity android:id="@+id/mainActivity"
               android:name="ir.hamplus.nac_bottom_navigation.view.activity.MainActivity"
-              android:label="ly_activity_main" tools:layout="@layout/ly_activity_main"/>
+              android:label="ly_activity_main" tools:layout="@layout/activity_main"/>
+    <fragment
+            android:id="@+id/listFragment"
+            android:name="ir.hamplus.aac_with_bottonnavigation.ListFragment"
+            tools:layout="@layout/fragment_item_list"
+            android:label="ListFragment" >
+        <action
+                android:id="@+id/action_listFragment_to_paramsFragment"
+                app:destination="@id/paramsFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/paramsFragment"
+            android:name="ir.hamplus.aac_with_bottonnavigation.ParamsFragment"
+            android:label="ParamsFragment" >
+        <argument
+                android:name="param1"
+                app:argType="string"
+                android:defaultValue="Hamed" />
+        <argument
+                android:name="param2"
+                app:argType="string"
+                android:defaultValue="jaliliani" />
+        <deepLink
+                android:id="@+id/deepLink"
+                app:uri="www.asanpardakht.ir/{param1}/{param2}" />
+    </fragment>
 </navigation>

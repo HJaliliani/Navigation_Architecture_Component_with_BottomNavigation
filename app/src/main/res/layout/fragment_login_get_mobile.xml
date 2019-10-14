@@ -11,9 +11,13 @@
 
         <!-- TODO: Update blank fragment layout -->
         <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/get_mobile" android:id="@+id/textView3"/>
+                android:text="@string/get_mobile"
+                tools:layout_editor_absoluteX="29dp"
+                tools:layout_editor_absoluteY="-45dp" />
+
         <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,7 +31,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView3" android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView3"/>
         <Button
-                android:text="@string/next_fragment"
+                android:text="@string/next_fragment_verify"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_next_frg_verify_code" app:layout_constraintEnd_toEndOf="@+id/editText"
@@ -41,6 +45,15 @@
                 android:textColor="#FFFF"
                 app:layout_constraintBottom_toTopOf="@+id/editText" app:layout_constraintEnd_toEndOf="@+id/editText"
                 app:layout_constraintStart_toStartOf="@+id/editText"/>
+
+        <Button
+                android:id="@+id/btn_list_frag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="List Frag"
+                app:layout_constraintEnd_toEndOf="@+id/btn_next_frg_verify_code"
+                app:layout_constraintStart_toStartOf="@+id/btn_next_frg_verify_code"
+                app:layout_constraintTop_toBottomOf="@+id/btn_next_frg_verify_code" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
