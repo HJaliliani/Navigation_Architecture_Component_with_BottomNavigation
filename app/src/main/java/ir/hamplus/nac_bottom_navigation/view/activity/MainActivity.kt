@@ -4,7 +4,12 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.onNavDestinationSelected
 import kotlinx.android.synthetic.main.ly_activity_main.*
 import androidx.navigation.ui.setupWithNavController
 import ir.hamplus.nac_bottom_navigation.R
@@ -16,14 +21,20 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.frgHome -> {
                 Toast.makeText(this,"Home Clicked", Toast.LENGTH_SHORT).show()
+                findNavController(R.id.nav_host_frag_main).navigate(R.id.action_global_frgHome)
+
                 return@OnNavigationItemSelectedListener true
             }
             R.id.frgDashboard -> {
                 Toast.makeText(this,"Dashboard Clicked", Toast.LENGTH_SHORT).show()
+                findNavController(R.id.nav_host_frag_main).navigate(R.id.action_global_frgDashboard)
+
                 return@OnNavigationItemSelectedListener true
             }
             R.id.frgNotifications -> {
                 Toast.makeText(this,"Notification Clicked", Toast.LENGTH_SHORT).show()
+
+                findNavController(R.id.nav_host_frag_main).navigate(R.id.action_global_frgNotifications)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -35,16 +46,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.ly_activity_main)
 
         //Method 1 to connect BottomNavigation with Navigation controller
-        val navControl = findNavController( R.id.nav_host_frag_main)
-        bottomNavigationView?.setupWithNavController(navControl)
+   /*     val navControl = findNavController( R.id.nav_host_frag_main)
+        navControl.popBackStack() //Handle backstack
+        bottomNavigationView?.setupWithNavController(navControl)*/
+
 
         //Method2:
-       /*  val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_frag_main) as NavHostFragment?
+         /*val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_frag_main) as? NavHostFragment?
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment!!.navController)*/
 
 
-        //Add listener to Bottom Navigation Button
-        //bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+        //Add listener to Bottom Navigation Button & BackStack Handling
+       bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
     }
 

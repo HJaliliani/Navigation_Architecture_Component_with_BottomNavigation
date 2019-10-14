@@ -17,5 +17,5 @@
               android:name="ir.hamplus.nac_bottom_navigation.view.fragment.FrgNotifications"
               android:label="ly_frg_notifications" tools:layout="@layout/ly_frg_notifications">
         <action android:id="@+id/action_frgNotifications_to_frgHome" app:destination="@id/frgHome"/>
-    </fragment>
+    </fragment><action android:id="@+id/action_global_frgHome" app:destination="@id/frgHome"/><action android:id="@+id/action_global_frgDashboard" app:destination="@id/frgDashboard"/><action android:id="@+id/action_global_frgNotifications" app:destination="@id/frgNotifications"/>
 </navigation>
