@@ -2,7 +2,11 @@
 To show how to use multiple activities each contains navigation graph (fragments)
 also connect Navigation graph to Bottom navigation .
 
-#Back stack handling will add soon.
+#Added:
+-Safe Arguments
+-Arguments
+-PopUp behavior
+-Global Action
 
 ## Screenshots:
 
