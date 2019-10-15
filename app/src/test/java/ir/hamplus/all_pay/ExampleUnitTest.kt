@@ -1,4 +1,4 @@
-package ir.hamplus.nac_bottom_navigation
+package ir.hamplus.all_pay
 
 import org.junit.Test
 

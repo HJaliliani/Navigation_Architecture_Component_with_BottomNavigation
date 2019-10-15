@@ -4,32 +4,26 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".view.fragment.FragmentSelectLanguage" android:id="@+id/frameLayout"
-             android:background="@color/colorPrimary">
+             android:background="@drawable/bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
                                                        android:layout_height="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="#FFFF"
-                android:text="@string/select_language" android:id="@+id/textView"/>
         <Spinner
                 android:layout_width="332dp"
                 android:layout_height="23dp"
                 android:background="@drawable/shadow_edittext"
-                android:id="@+id/spinner" app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView" android:layout_marginStart="8dp"
+                android:id="@+id/spinner" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                 app:layout_constraintHorizontal_bias="0.436" android:entries="@array/languagesList"
-                app:layout_constraintBottom_toBottomOf="@+id/textView" android:layout_marginBottom="324dp"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="324dp"
                 />
         <TextView
                 android:text="@string/select_language"
                 android:layout_width="wrap_content"
                 android:layout_height="37dp"
                 android:id="@+id/textView2"
-                android:textColor="#FFFF"
+                android:textColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/spinner" android:layout_marginEnd="8dp"
                 app:layout_constraintStart_toEndOf="@+id/spinner" android:layout_marginStart="8dp"

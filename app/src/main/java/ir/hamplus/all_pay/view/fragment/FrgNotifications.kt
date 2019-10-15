@@ -1,4 +1,4 @@
-package ir.hamplus.nac_bottom_navigation.view.fragment
+package ir.hamplus.all_pay.view.fragment
 
 import android.content.Context
 import android.net.Uri
@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import ir.hamplus.nac_bottom_navigation.R
+import ir.hamplus.all_pay.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

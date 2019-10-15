@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.ActBalance">
+
+    <EditText
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Phone Number"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.352" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edBalancePhoneNumber"
+        android:layout_width="332dp"
+        android:layout_height="62dp"
+        android:inputType="phone"
+        android:textColor="@android:color/black"
+
+        android:drawableLeft="@drawable/ic_mobilelogin"
+         app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:id="@+id/btnBalanceAsiaCellCall"
+        android:layout_height="wrap_content"
+         android:visibility="gone"
+        android:drawableLeft="@drawable/logo_asiacel"
+        app:layout_constraintEnd_toEndOf="@+id/edBalancePhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/edBalancePhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/edBalancePhoneNumber" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:id="@+id/btnBalanceCallKorek"
+        android:layout_height="wrap_content"
+         android:visibility="gone"
+        android:drawableLeft="@drawable/logo_korek"
+        app:layout_constraintEnd_toEndOf="@+id/btnBalanceAsiaCellCall"
+        app:layout_constraintStart_toStartOf="@+id/btnBalanceAsiaCellCall"
+        app:layout_constraintTop_toBottomOf="@+id/btnBalanceAsiaCellCall" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:id="@+id/btnBalanceCallZain"
+        android:layout_height="wrap_content"
+         android:visibility="gone"
+        android:paddingLeft="6dp"
+
+        android:drawableLeft="@drawable/logo_zain"
+        app:layout_constraintEnd_toEndOf="@+id/btnBalanceCallKorek"
+        app:layout_constraintStart_toStartOf="@+id/btnBalanceCallKorek"
+        app:layout_constraintTop_toBottomOf="@+id/btnBalanceCallKorek" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:padding="6dp"
+        android:text="Balance"
+        android:textColor="@android:color/black"
+
+        app:layout_constraintEnd_toEndOf="@+id/btnBalanceCallZain"
+        app:layout_constraintStart_toStartOf="@+id/btnBalanceCallZain"
+        app:layout_constraintTop_toBottomOf="@+id/btnBalanceCallZain" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
